@@ -341,7 +341,55 @@ Relacionamento:
 
 ---
 
-# 5. Estratégia de Herança
+# 5. Justificativa dos Tipos de Dados
+
+A escolha dos tipos de dados foi realizada considerando integridade, desempenho, escalabilidade e adequação ao domínio de negócio da plataforma StreamFlow.
+
+| Campo                     | Tipo          | Justificativa                                                                                   |
+| ------------------------- | ------------- | ----------------------------------------------------------------------------------------------- |
+| id                        | BIGINT        | Permite grande volume de registros sem risco de esgotamento do identificador.                   |
+| nome                      | VARCHAR(150)  | Armazena nomes com tamanho variável, evitando desperdício de espaço.                            |
+| email                     | VARCHAR(255)  | Compatível com padrões amplamente utilizados para endereços eletrônicos.                        |
+| cpf                       | CHAR(11)      | O CPF possui tamanho fixo de 11 dígitos, tornando CHAR mais adequado que VARCHAR.               |
+| uf                        | CHAR(2)       | Sigla de estado possui tamanho fixo de dois caracteres.                                         |
+| saldo                     | DECIMAL(12,2) | Garante precisão em operações financeiras, evitando erros de arredondamento presentes em FLOAT. |
+| data_nascimento           | DATE          | Necessário apenas armazenar a data, sem horário associado.                                      |
+| created_at                | TIMESTAMP     | Permite registrar automaticamente o momento de criação do registro.                             |
+| tipo_conteudo             | ENUM          | Restringe os valores permitidos aos tipos válidos de conteúdo.                                  |
+| tipo_midia                | ENUM          | Garante consistência entre os tipos de reprodução permitidos.                                   |
+| duracao_minutos           | INT           | Facilita cálculos, agregações e análises estatísticas de consumo.                               |
+| tempo_visualizado_minutos | INT           | Permite mensuração objetiva do progresso do usuário.                                            |
+| tempo_assistido_minutos   | INT           | Facilita relatórios analíticos e consolidações de consumo.                                      |
+| ip_conexao                | VARCHAR(45)   | Compatível com endereços IPv4 e IPv6.                                                           |
+| dispositivo               | ENUM          | Limita os valores aos dispositivos oficialmente suportados pela plataforma.                     |
+
+A utilização desses tipos contribui para a integridade dos dados, reduz inconsistências e otimiza consultas realizadas pelo sistema.
+
+---
+
+# 6. Dicionário de Dados
+
+O dicionário de dados apresenta a finalidade de cada entidade utilizada na modelagem da plataforma StreamFlow.
+
+| Tabela                 | Finalidade                                                                                         |
+| ---------------------- | -------------------------------------------------------------------------------------------------- |
+| assinantes             | Armazenar os dados do titular responsável pela assinatura da plataforma.                           |
+| perfis                 | Representar os perfis individuais vinculados a um assinante.                                       |
+| preferencias_perfis    | Registrar categorias e preferências de consumo dos perfis.                                         |
+| produtoras             | Armazenar as empresas responsáveis pelos conteúdos disponibilizados.                               |
+| conteudos              | Centralizar os atributos comuns de filmes e séries.                                                |
+| filmes                 | Armazenar informações específicas de conteúdos do tipo filme.                                      |
+| series                 | Armazenar informações específicas de conteúdos do tipo série.                                      |
+| episodios              | Registrar os episódios pertencentes às séries cadastradas.                                         |
+| historicos_reproducao  | Controlar o progresso de reprodução utilizado na funcionalidade "Continuar Assistindo".            |
+| logs_reproducao        | Registrar eventos imutáveis de acesso para auditoria, segurança e análise de consumo.              |
+| vw_analise_engajamento | Disponibilizar métricas analíticas sem expor dados pessoais sensíveis, em conformidade com a LGPD. |
+
+Esse conjunto de entidades permite atender simultaneamente às necessidades operacionais, analíticas e de auditoria da plataforma StreamFlow.
+
+---
+
+# 7. Estratégia de Herança
 
 Para resolver a especialização de conteúdos foi utilizada a técnica conhecida como:
 
@@ -373,7 +421,7 @@ Benefícios:
 
 ---
 
-# 6. Integridade Referencial
+# 8. Integridade Referencial
 
 Foi adotado:
 
@@ -396,7 +444,7 @@ Assim, caso um conteúdo possua reproduções registradas, sua remoção física
 
 ---
 
-# 7. Implementação da Regra dos 5 Perfis
+# 9. Implementação da Regra dos 5 Perfis
 
 Foi criada a trigger:
 
@@ -417,7 +465,7 @@ Benefícios:
 
 ---
 
-# 8. Implementação dos Logs Imutáveis
+# 10. Implementação dos Logs Imutáveis
 
 Foram criadas as triggers:
 
@@ -443,7 +491,7 @@ Benefícios:
 
 ---
 
-# 9. Controle de Acesso (RBAC)
+# 11. Controle de Acesso (RBAC)
 
 ## Usuário da Aplicação
 
@@ -480,7 +528,7 @@ Sem acesso aos dados pessoais dos assinantes.
 
 ---
 
-# 10. Conformidade com a LGPD
+# 12. Conformidade com a LGPD
 
 Foi criada a View:
 
@@ -511,7 +559,7 @@ Email: jo***@email.com
 
 ---
 
-# 11. Estratégia de Performance
+# 13. Estratégia de Performance
 
 O principal gargalo identificado foi a consulta:
 
@@ -544,7 +592,7 @@ Benefícios:
 
 ---
 
-# 12. Consultas Desenvolvidas
+# 14. Consultas Desenvolvidas
 
 ## Consulta 1 – Continuar Assistindo
 
@@ -609,7 +657,7 @@ Indicadores:
 
 ---
 
-# 13. Conclusão
+# 15. Conclusão
 
 O projeto StreamFlow foi desenvolvido seguindo princípios modernos de Engenharia de Dados, Modelagem Relacional e Governança de Informação.
 
