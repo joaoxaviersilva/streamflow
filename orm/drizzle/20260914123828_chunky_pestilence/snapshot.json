@@ -1,0 +1,1594 @@
+{
+  "dialect": "mysql",
+  "id": "e309dde7-e9bd-4c3a-a9a8-4b2e722bae27",
+  "prevIds": [],
+  "version": "6",
+  "ddl": [
+    {
+      "name": "auditoria_log",
+      "entityType": "tables"
+    },
+    {
+      "name": "episodios",
+      "entityType": "tables"
+    },
+    {
+      "name": "faturamento_produtoras",
+      "entityType": "tables"
+    },
+    {
+      "name": "filmes",
+      "entityType": "tables"
+    },
+    {
+      "name": "perfis",
+      "entityType": "tables"
+    },
+    {
+      "name": "preferencias_perfis",
+      "entityType": "tables"
+    },
+    {
+      "name": "produtoras",
+      "entityType": "tables"
+    },
+    {
+      "name": "series",
+      "entityType": "tables"
+    },
+    {
+      "name": "assinantes",
+      "entityType": "tables"
+    },
+    {
+      "name": "conteudos",
+      "entityType": "tables"
+    },
+    {
+      "name": "historicos_reproducao",
+      "entityType": "tables"
+    },
+    {
+      "name": "logs_reproducao",
+      "entityType": "tables"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "assinantes"
+    },
+    {
+      "type": "varchar(150)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "nome",
+      "entityType": "columns",
+      "table": "assinantes"
+    },
+    {
+      "type": "varchar(255)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "email",
+      "entityType": "columns",
+      "table": "assinantes"
+    },
+    {
+      "type": "char(11)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "cpf",
+      "entityType": "columns",
+      "table": "assinantes"
+    },
+    {
+      "type": "date",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "data_nascimento",
+      "entityType": "columns",
+      "table": "assinantes"
+    },
+    {
+      "type": "char(2)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "uf",
+      "entityType": "columns",
+      "table": "assinantes"
+    },
+    {
+      "type": "decimal(12,2)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "0.00",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "saldo",
+      "entityType": "columns",
+      "table": "assinantes"
+    },
+    {
+      "type": "timestamp",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "current_timestamp()",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "table": "assinantes"
+    },
+    {
+      "type": "timestamp",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "current_timestamp()",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "data_ultima_alteracao",
+      "entityType": "columns",
+      "table": "assinantes"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "auditoria_log"
+    },
+    {
+      "type": "varchar(50)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "tabela",
+      "entityType": "columns",
+      "table": "auditoria_log"
+    },
+    {
+      "type": "varchar(10)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "operacao",
+      "entityType": "columns",
+      "table": "auditoria_log"
+    },
+    {
+      "type": "varchar(100)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "usuario",
+      "entityType": "columns",
+      "table": "auditoria_log"
+    },
+    {
+      "type": "longtext",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": "NULL",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": "utf8mb4",
+      "collation": "utf8mb4_bin",
+      "generated": null,
+      "name": "valor_antigo",
+      "entityType": "columns",
+      "table": "auditoria_log"
+    },
+    {
+      "type": "longtext",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": "NULL",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": "utf8mb4",
+      "collation": "utf8mb4_bin",
+      "generated": null,
+      "name": "valor_novo",
+      "entityType": "columns",
+      "table": "auditoria_log"
+    },
+    {
+      "type": "timestamp",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "current_timestamp()",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "data_hora",
+      "entityType": "columns",
+      "table": "auditoria_log"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "conteudos"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "produtora_id",
+      "entityType": "columns",
+      "table": "conteudos"
+    },
+    {
+      "type": "varchar(255)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "titulo",
+      "entityType": "columns",
+      "table": "conteudos"
+    },
+    {
+      "type": "varchar(100)",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": "'NULL'",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "genero",
+      "entityType": "columns",
+      "table": "conteudos"
+    },
+    {
+      "type": "varchar(10)",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": "'NULL'",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "classificacao_indicativa",
+      "entityType": "columns",
+      "table": "conteudos"
+    },
+    {
+      "type": "enum('FILME','SERIE')",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "tipo_conteudo",
+      "entityType": "columns",
+      "table": "conteudos"
+    },
+    {
+      "type": "tinyint(1)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "true",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "ativo",
+      "entityType": "columns",
+      "table": "conteudos"
+    },
+    {
+      "type": "timestamp",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "current_timestamp()",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "table": "conteudos"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "episodios"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "serie_id",
+      "entityType": "columns",
+      "table": "episodios"
+    },
+    {
+      "type": "varchar(255)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "titulo",
+      "entityType": "columns",
+      "table": "episodios"
+    },
+    {
+      "type": "int(11)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "temporada",
+      "entityType": "columns",
+      "table": "episodios"
+    },
+    {
+      "type": "int(11)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "numero_episodio",
+      "entityType": "columns",
+      "table": "episodios"
+    },
+    {
+      "type": "int(11)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "duracao_minutos",
+      "entityType": "columns",
+      "table": "episodios"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "faturamento_produtoras"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "produtora_id",
+      "entityType": "columns",
+      "table": "faturamento_produtoras"
+    },
+    {
+      "type": "date",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "competencia",
+      "entityType": "columns",
+      "table": "faturamento_produtoras"
+    },
+    {
+      "type": "int(11)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "0",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "minutos_consumidos",
+      "entityType": "columns",
+      "table": "faturamento_produtoras"
+    },
+    {
+      "type": "timestamp",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "current_timestamp()",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "table": "faturamento_produtoras"
+    },
+    {
+      "type": "timestamp",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "current_timestamp()",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "data_ultima_alteracao",
+      "entityType": "columns",
+      "table": "faturamento_produtoras"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "filmes"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "conteudo_id",
+      "entityType": "columns",
+      "table": "filmes"
+    },
+    {
+      "type": "int(11)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "duracao_minutos",
+      "entityType": "columns",
+      "table": "filmes"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "historicos_reproducao"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "perfil_id",
+      "entityType": "columns",
+      "table": "historicos_reproducao"
+    },
+    {
+      "type": "enum('FILME','EPISODIO')",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "tipo_midia",
+      "entityType": "columns",
+      "table": "historicos_reproducao"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": "NULL",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "filme_id",
+      "entityType": "columns",
+      "table": "historicos_reproducao"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": "NULL",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "episodio_id",
+      "entityType": "columns",
+      "table": "historicos_reproducao"
+    },
+    {
+      "type": "int(11)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "0",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "tempo_visualizado_minutos",
+      "entityType": "columns",
+      "table": "historicos_reproducao"
+    },
+    {
+      "type": "tinyint(1)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "false",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "concluido",
+      "entityType": "columns",
+      "table": "historicos_reproducao"
+    },
+    {
+      "type": "timestamp",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "current_timestamp()",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "data_hora_atualizacao",
+      "entityType": "columns",
+      "table": "historicos_reproducao"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "logs_reproducao"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "perfil_id",
+      "entityType": "columns",
+      "table": "logs_reproducao"
+    },
+    {
+      "type": "enum('FILME','EPISODIO')",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "tipo_midia",
+      "entityType": "columns",
+      "table": "logs_reproducao"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": "NULL",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "filme_id",
+      "entityType": "columns",
+      "table": "logs_reproducao"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": false,
+      "autoIncrement": false,
+      "default": "NULL",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "episodio_id",
+      "entityType": "columns",
+      "table": "logs_reproducao"
+    },
+    {
+      "type": "varchar(45)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "ip_conexao",
+      "entityType": "columns",
+      "table": "logs_reproducao"
+    },
+    {
+      "type": "enum('SMARTTV','SMARTPHONE','WEB')",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "dispositivo",
+      "entityType": "columns",
+      "table": "logs_reproducao"
+    },
+    {
+      "type": "timestamp",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "current_timestamp()",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "data_hora_acesso",
+      "entityType": "columns",
+      "table": "logs_reproducao"
+    },
+    {
+      "type": "int(11)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "0",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "tempo_assistido_minutos",
+      "entityType": "columns",
+      "table": "logs_reproducao"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "perfis"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "assinante_id",
+      "entityType": "columns",
+      "table": "perfis"
+    },
+    {
+      "type": "varchar(100)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "nome_exibicao",
+      "entityType": "columns",
+      "table": "perfis"
+    },
+    {
+      "type": "timestamp",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": "current_timestamp()",
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "table": "perfis"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "preferencias_perfis"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "perfil_id",
+      "entityType": "columns",
+      "table": "preferencias_perfis"
+    },
+    {
+      "type": "varchar(100)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "categoria_favorita",
+      "entityType": "columns",
+      "table": "preferencias_perfis"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "produtoras"
+    },
+    {
+      "type": "varchar(200)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "nome",
+      "entityType": "columns",
+      "table": "produtoras"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": true,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "series"
+    },
+    {
+      "type": "bigint(20)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "conteudo_id",
+      "entityType": "columns",
+      "table": "series"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "auditoria_log",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "series",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "perfis",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "filmes",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "conteudos",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "preferencias_perfis",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "historicos_reproducao",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "episodios",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "assinantes",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "produtoras",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "logs_reproducao",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "faturamento_produtoras",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        {
+          "value": "cpf",
+          "isExpression": false
+        }
+      ],
+      "isUnique": true,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": true,
+      "name": "cpf",
+      "entityType": "indexes",
+      "table": "assinantes"
+    },
+    {
+      "columns": [
+        {
+          "value": "dispositivo",
+          "isExpression": false
+        }
+      ],
+      "isUnique": false,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": true,
+      "name": "idx_logs_dispositivo",
+      "entityType": "indexes",
+      "table": "logs_reproducao"
+    },
+    {
+      "columns": [
+        {
+          "value": "produtora_id",
+          "isExpression": false
+        }
+      ],
+      "isUnique": false,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": true,
+      "name": "idx_conteudos_produtora",
+      "entityType": "indexes",
+      "table": "conteudos"
+    },
+    {
+      "columns": [
+        {
+          "value": "serie_id",
+          "isExpression": false
+        },
+        {
+          "value": "temporada",
+          "isExpression": false
+        },
+        {
+          "value": "numero_episodio",
+          "isExpression": false
+        }
+      ],
+      "isUnique": true,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": true,
+      "name": "uq_episodio_serie_temporada_numero",
+      "entityType": "indexes",
+      "table": "episodios"
+    },
+    {
+      "columns": [
+        {
+          "value": "produtora_id",
+          "isExpression": false
+        },
+        {
+          "value": "competencia",
+          "isExpression": false
+        }
+      ],
+      "isUnique": true,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": true,
+      "name": "uq_faturamento_produtora_competencia",
+      "entityType": "indexes",
+      "table": "faturamento_produtoras"
+    },
+    {
+      "columns": [
+        {
+          "value": "data_hora_acesso",
+          "isExpression": false
+        }
+      ],
+      "isUnique": false,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": true,
+      "name": "idx_logs_data_acesso",
+      "entityType": "indexes",
+      "table": "logs_reproducao"
+    },
+    {
+      "columns": [
+        {
+          "value": "uf",
+          "isExpression": false
+        }
+      ],
+      "isUnique": false,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": true,
+      "name": "idx_assinantes_uf",
+      "entityType": "indexes",
+      "table": "assinantes"
+    },
+    {
+      "columns": [
+        {
+          "value": "conteudo_id",
+          "isExpression": false
+        }
+      ],
+      "isUnique": true,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": true,
+      "name": "conteudo_id",
+      "entityType": "indexes",
+      "table": "filmes"
+    },
+    {
+      "columns": [
+        {
+          "value": "perfil_id",
+          "isExpression": false
+        }
+      ],
+      "isUnique": false,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": true,
+      "name": "idx_logs_perfil",
+      "entityType": "indexes",
+      "table": "logs_reproducao"
+    },
+    {
+      "columns": [
+        {
+          "value": "perfil_id",
+          "isExpression": false
+        },
+        {
+          "value": "concluido",
+          "isExpression": false
+        },
+        {
+          "value": "data_hora_atualizacao",
+          "isExpression": false
+        }
+      ],
+      "isUnique": false,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": true,
+      "name": "idx_historico_perfil_pendente",
+      "entityType": "indexes",
+      "table": "historicos_reproducao"
+    },
+    {
+      "columns": [
+        {
+          "value": "nome",
+          "isExpression": false
+        }
+      ],
+      "isUnique": true,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": true,
+      "name": "nome",
+      "entityType": "indexes",
+      "table": "produtoras"
+    },
+    {
+      "columns": [
+        {
+          "value": "conteudo_id",
+          "isExpression": false
+        }
+      ],
+      "isUnique": true,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": true,
+      "name": "conteudo_id",
+      "entityType": "indexes",
+      "table": "series"
+    },
+    {
+      "columns": [
+        {
+          "value": "email",
+          "isExpression": false
+        }
+      ],
+      "isUnique": true,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": true,
+      "name": "email",
+      "entityType": "indexes",
+      "table": "assinantes"
+    },
+    {
+      "columns": [
+        "produtora_id"
+      ],
+      "tableTo": "produtoras",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "CASCADE",
+      "onDelete": "RESTRICT",
+      "nameExplicit": true,
+      "name": "fk_conteudos_produtoras",
+      "entityType": "fks",
+      "table": "conteudos"
+    },
+    {
+      "columns": [
+        "serie_id"
+      ],
+      "tableTo": "series",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "CASCADE",
+      "onDelete": "RESTRICT",
+      "nameExplicit": true,
+      "name": "fk_episodios_series",
+      "entityType": "fks",
+      "table": "episodios"
+    },
+    {
+      "columns": [
+        "produtora_id"
+      ],
+      "tableTo": "produtoras",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "CASCADE",
+      "onDelete": "RESTRICT",
+      "nameExplicit": true,
+      "name": "fk_fat_produtoras",
+      "entityType": "fks",
+      "table": "faturamento_produtoras"
+    },
+    {
+      "columns": [
+        "conteudo_id"
+      ],
+      "tableTo": "conteudos",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "CASCADE",
+      "onDelete": "RESTRICT",
+      "nameExplicit": true,
+      "name": "fk_filmes_conteudos",
+      "entityType": "fks",
+      "table": "filmes"
+    },
+    {
+      "columns": [
+        "episodio_id"
+      ],
+      "tableTo": "episodios",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "RESTRICT",
+      "onDelete": "RESTRICT",
+      "nameExplicit": true,
+      "name": "fk_hist_episodios",
+      "entityType": "fks",
+      "table": "historicos_reproducao"
+    },
+    {
+      "columns": [
+        "filme_id"
+      ],
+      "tableTo": "filmes",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "RESTRICT",
+      "onDelete": "RESTRICT",
+      "nameExplicit": true,
+      "name": "fk_hist_filmes",
+      "entityType": "fks",
+      "table": "historicos_reproducao"
+    },
+    {
+      "columns": [
+        "perfil_id"
+      ],
+      "tableTo": "perfis",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "RESTRICT",
+      "onDelete": "CASCADE",
+      "nameExplicit": true,
+      "name": "fk_hist_perfis",
+      "entityType": "fks",
+      "table": "historicos_reproducao"
+    },
+    {
+      "columns": [
+        "episodio_id"
+      ],
+      "tableTo": "episodios",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "RESTRICT",
+      "onDelete": "RESTRICT",
+      "nameExplicit": true,
+      "name": "fk_logs_episodios",
+      "entityType": "fks",
+      "table": "logs_reproducao"
+    },
+    {
+      "columns": [
+        "filme_id"
+      ],
+      "tableTo": "filmes",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "RESTRICT",
+      "onDelete": "RESTRICT",
+      "nameExplicit": true,
+      "name": "fk_logs_filmes",
+      "entityType": "fks",
+      "table": "logs_reproducao"
+    },
+    {
+      "columns": [
+        "perfil_id"
+      ],
+      "tableTo": "perfis",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "RESTRICT",
+      "onDelete": "RESTRICT",
+      "nameExplicit": true,
+      "name": "fk_logs_perfis",
+      "entityType": "fks",
+      "table": "logs_reproducao"
+    },
+    {
+      "columns": [
+        "assinante_id"
+      ],
+      "tableTo": "assinantes",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "CASCADE",
+      "onDelete": "CASCADE",
+      "nameExplicit": true,
+      "name": "fk_perfis_assinantes",
+      "entityType": "fks",
+      "table": "perfis"
+    },
+    {
+      "columns": [
+        "perfil_id"
+      ],
+      "tableTo": "perfis",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "CASCADE",
+      "onDelete": "CASCADE",
+      "nameExplicit": true,
+      "name": "fk_preferencias_perfis",
+      "entityType": "fks",
+      "table": "preferencias_perfis"
+    },
+    {
+      "columns": [
+        "conteudo_id"
+      ],
+      "tableTo": "conteudos",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "CASCADE",
+      "onDelete": "RESTRICT",
+      "nameExplicit": true,
+      "name": "fk_series_conteudos",
+      "entityType": "fks",
+      "table": "series"
+    },
+    {
+      "value": "`saldo` >= 0",
+      "name": "chk_saldo_positivo",
+      "entityType": "checks",
+      "table": "assinantes"
+    },
+    {
+      "value": "json_valid(`valor_antigo`)",
+      "name": "valor_antigo",
+      "entityType": "checks",
+      "table": "auditoria_log"
+    },
+    {
+      "value": "json_valid(`valor_novo`)",
+      "name": "valor_novo",
+      "entityType": "checks",
+      "table": "auditoria_log"
+    },
+    {
+      "value": "`temporada` > 0",
+      "name": "chk_episodios_temporada",
+      "entityType": "checks",
+      "table": "episodios"
+    },
+    {
+      "value": "`numero_episodio` > 0",
+      "name": "chk_episodios_numero",
+      "entityType": "checks",
+      "table": "episodios"
+    },
+    {
+      "value": "`duracao_minutos` > 0",
+      "name": "chk_episodios_duracao",
+      "entityType": "checks",
+      "table": "episodios"
+    },
+    {
+      "value": "`minutos_consumidos` >= 0",
+      "name": "chk_faturamento_minutos",
+      "entityType": "checks",
+      "table": "faturamento_produtoras"
+    },
+    {
+      "value": "`duracao_minutos` > 0",
+      "name": "chk_filmes_duracao",
+      "entityType": "checks",
+      "table": "filmes"
+    },
+    {
+      "value": "`tempo_visualizado_minutos` >= 0",
+      "name": "chk_historico_tempo",
+      "entityType": "checks",
+      "table": "historicos_reproducao"
+    },
+    {
+      "value": "`tipo_midia` = 'FILME' and `filme_id` is not null and `episodio_id` is null or `tipo_midia` = 'EPISODIO' and `episodio_id` is not null and `filme_id` is null",
+      "name": "chk_historico_tipo_midia",
+      "entityType": "checks",
+      "table": "historicos_reproducao"
+    },
+    {
+      "value": "`tempo_assistido_minutos` >= 0",
+      "name": "chk_logs_tempo",
+      "entityType": "checks",
+      "table": "logs_reproducao"
+    },
+    {
+      "value": "`tipo_midia` = 'FILME' and `filme_id` is not null and `episodio_id` is null or `tipo_midia` = 'EPISODIO' and `episodio_id` is not null and `filme_id` is null",
+      "name": "chk_logs_tipo_midia",
+      "entityType": "checks",
+      "table": "logs_reproducao"
+    },
+    {
+      "definition": "select `p`.`id` AS `perfil_id`,'CONFIDENCIAL' AS `nome`,concat(left(`a`.`email`,2),'***@',substring_index(`a`.`email`,'@',-1)) AS `email_mascarado`,'***.***.***-**' AS `cpf`,`calcular_idade`(`a`.`data_nascimento`) AS `idade`,`a`.`uf` AS `uf`,count(`l`.`id`) AS `total_reproducoes`,coalesce(sum(`l`.`tempo_assistido_minutos`),0) AS `minutos_consumidos` from ((`streamflow`.`assinantes` `a` join `streamflow`.`perfis` `p` on(`p`.`assinante_id` = `a`.`id`)) left join `streamflow`.`logs_reproducao` `l` on(`l`.`perfil_id` = `p`.`id`)) group by `p`.`id`,`a`.`data_nascimento`,`a`.`uf`,`a`.`email`",
+      "algorithm": "undefined",
+      "sqlSecurity": "definer",
+      "withCheckOption": null,
+      "name": "vw_analise_engajamento",
+      "entityType": "views"
+    }
+  ],
+  "renames": []
+}
