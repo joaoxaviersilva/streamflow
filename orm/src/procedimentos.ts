@@ -106,6 +106,7 @@ async function testarReproducao() {
                 ?,
                 ?,
                 ?,
+                ?,
                 @id_reproducao
             )
             `,
@@ -115,6 +116,7 @@ async function testarReproducao() {
                 1,
                 "200.100.50.20",
                 "WEB",
+                42,
             ]
         );
 
@@ -146,6 +148,8 @@ async function testarReproducao() {
             episodioId: logsReproducao.episodioId,
             ipConexao: logsReproducao.ipConexao,
             dispositivo: logsReproducao.dispositivo,
+            tempoAssistidoMinutos:
+                logsReproducao.tempoAssistidoMinutos,
         })
         .from(logsReproducao)
         .where(eq(logsReproducao.id, idReproducao));

@@ -377,6 +377,7 @@ CREATE PROCEDURE registrar_reproducao(
     IN p_midia_id BIGINT,
     IN p_ip_conexao VARCHAR(45),
     IN p_dispositivo VARCHAR(20),
+    IN p_tempo_assistido_minutos INT,
     OUT p_reproducao_id BIGINT
 )
 BEGIN
@@ -410,6 +411,13 @@ BEGIN
         SET MESSAGE_TEXT = 'Dispositivo invalido.';
     END IF;
 
+    IF p_tempo_assistido_minutos IS NULL
+       OR p_tempo_assistido_minutos < 0 THEN
+
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Tempo assistido invalido.';
+    END IF;
+
     IF UPPER(p_tipo_midia) = 'FILME' THEN
 
         SELECT COUNT(*)
@@ -438,7 +446,7 @@ BEGIN
             NULL,
             p_ip_conexao,
             UPPER(p_dispositivo),
-            0
+            p_tempo_assistido_minutos
         );
 
     ELSE
@@ -469,7 +477,7 @@ BEGIN
             p_midia_id,
             p_ip_conexao,
             UPPER(p_dispositivo),
-            0
+            p_tempo_assistido_minutos
         );
     END IF;
 
@@ -814,6 +822,10 @@ TO 'application_user'@'%';
 
 GRANT SELECT
 ON streamflow.episodios
+TO 'application_user'@'%';
+
+GRANT SELECT
+ON streamflow.faturamento_produtoras
 TO 'application_user'@'%';
 
 -- Permissoes das Procedures
@@ -1178,13 +1190,14 @@ ORDER BY total_reproducoes DESC;
  SET @id_reproducao = 0;
 
  CALL registrar_reproducao(
-     1,
-     'FILME',
-     1,
-     '200.100.50.10',
-     'WEB',
-     @id_reproducao
- );
+    1,
+    'FILME',
+    1,
+    '200.100.50.10',
+    'WEB',
+    42,
+    @id_reproducao
+);
 
  SELECT @id_reproducao AS reproducao_criada;
 
@@ -1197,13 +1210,14 @@ ORDER BY total_reproducoes DESC;
  SET @id_reproducao = 0;
 
  CALL registrar_reproducao(
-     999,
-     'FILME',
-     1,
-     '200.100.50.10',
-     'WEB',
-     @id_reproducao
- );
+    999,
+    'FILME',
+    1,
+    '200.100.50.10',
+    'WEB',
+    42,
+    @id_reproducao
+);
 
 -- Teste da Procedure de faturamento
 
