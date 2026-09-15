@@ -706,11 +706,3 @@ O projeto combina:
 - integração aplicação ↔ banco.
 
 A camada ORM funciona como consumidor do banco, enquanto as regras de negócio críticas permanecem encapsuladas no SGBD, reduzindo duplicação de lógica e aumentando consistência e rastreabilidade.
-
----
-
-## Autor
-
-**João Victor Xavier da Silva**  
-Turma: **3 DS Ams**  
-Professor: **Salomão**
